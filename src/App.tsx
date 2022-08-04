@@ -1,17 +1,22 @@
-import CardList from './components/card-list/card-list';
-import monsters from './utils/product-data/product-data';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+const Navigation = lazy(() => import('./routes/navigation/navigation'));
+const Home = lazy(() => import('./routes/home'));
+const SubTotal = lazy(() => import('./routes/subtotal'));
+const Checkout = lazy(() => import('./routes/checkout'));
 
 const App = () => {
   return (
-  <div className='mx-10 mt-40'>
-    <div className="grid grid-cols-4 gap-4">
-      {
-        monsters.map((monster) => (
-          <CardList key={monster.id} monster={monster} />
-        ))
-      }
-    </div>
-  </div>
+    <Suspense>
+      <Routes>
+        <Route path='/' element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path='subtotal' element={<SubTotal />} />
+          <Route path='checkout' element={<Checkout />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }
 
