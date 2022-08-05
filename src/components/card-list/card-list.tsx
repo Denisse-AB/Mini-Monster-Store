@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { CartContext } from '../../context/cart-context';
+import { CartContext } from '../../context/cart-context/cart-context';
 
-type Monster = {
+export type Monster = {
   monster: {
-    name: string;
-    imageUrl: string;
-    price: number;
+    name: string,
+    imageUrl: string,
+    price: number,
+    quantity: number
   }
 }
 
@@ -13,7 +14,6 @@ const CardList = ({ monster }:Monster) => {
   const { name, imageUrl, price } = monster;
   const { addItemToCart } = useContext(CartContext);
 
-  // TODO: BRING COUNTER AND BUILD BUTTON NAV
   const insertItemToCart = () => addItemToCart(monster);
 
   return (

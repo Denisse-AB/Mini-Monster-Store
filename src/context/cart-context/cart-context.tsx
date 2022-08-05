@@ -40,7 +40,7 @@ export const CartProvider = ({ children }:Props) => {
   const [cartTotal, setCartTotal] = useState(0)
 
   const addItemToCart = (productToAdd:Item) => {
-    console.log(productToAdd)
+    // console.log(productToAdd)
     setCartItems(addCartItem(cartItems, productToAdd))
   }
 
