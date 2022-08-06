@@ -1,13 +1,18 @@
-type Props = {
-  class: string,
-  label: string
-}
+import { FC, ButtonHTMLAttributes} from 'react';
 
-const Button = (props:Props) => (
-  <button
-    className={'border border-black mt-5 rounded-full ' + (props.class)}
-  >{props.label}
-  </button>
-)
+type Props = {
+  children?: string,
+  buttonType: string
+}& ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button: FC<Props> = ({children, buttonType, ...otherProps}) => {
+  return (
+    <button
+      className={'border border-black mt-5 rounded-full ' + (buttonType)}
+      {...otherProps}
+    >{children}
+    </button>
+  )
+}
 
 export default Button;

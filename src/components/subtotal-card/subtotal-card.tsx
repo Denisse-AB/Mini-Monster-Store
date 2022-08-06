@@ -1,18 +1,36 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/cart-context/cart-context";
 import Button from "../button/button";
-import { Monster } from "../card-list/card-list";
 
-const SubTotalCard = ({monster}:Monster) => {
-  const { name, imageUrl, price, quantity } = monster;
+type SubtotalProps = {
+  title: string,
+  buttonLabel: string
+}
+
+const SubTotalCard = ({title, buttonLabel}:SubtotalProps) => {
+  const { cartTotal } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const checkout = () => {
+    if (buttonLabel === 'Subtotal') {
+      navigate('/checkout')
+    } else {
+      console.log('thankyou page');
+    }
+  };
 
   return (
-    <div className="flex flex-col w-96 items-center bg-white rounded-lg border shadow-sm md:flex-row md:max-w-lg hover:bg-gray-100">
-      <img className="object-cover w-full h-60 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={imageUrl} alt={`monster ${name}`} />
-      <div className="flex flex-col justify-between leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{name}</h5>
-        <p className="mb-3 font-normal text-gray-700">{`Price: ${price}`}</p>
-        <p>{`Qty: ${quantity}`}</p>
-        <Button class="ml-20 w-20 " label="Delete" />
-        {/* <button className="ml-20 border border-black w-20 mt-5 rounded-full">Delete</button> */}
+    <div className="relative mx-3 w-96 float-right rounded-lg border shadow-sm hover:bg-gray-100">
+      <div className="m-5">
+        <h5 className="mb-2 pb-3 border-b border-gray-300 text-center text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
+        Subtotal: ${cartTotal}
+        <Button
+          type="button"
+          onClick={checkout}
+          buttonType='w-full'
+        >{buttonLabel}
+        </Button>
       </div>
     </div>
   )
