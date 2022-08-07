@@ -16,15 +16,45 @@ const SubTotalCard = ({title, buttonLabel}:SubtotalProps) => {
     if (buttonLabel === 'Subtotal') {
       navigate('/checkout')
     } else {
-      console.log('thankyou page');
+      navigate('/thankyou')
     }
   };
 
   return (
-    <div className="relative mx-3 w-96 float-right rounded-lg border shadow-sm hover:bg-gray-100">
+    <div className="relative mx-3 w-96 tablet:float-right rounded-lg border shadow-sm hover:bg-gray-100">
       <div className="m-5">
         <h5 className="mb-2 pb-3 border-b border-gray-300 text-center text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
-        Subtotal: ${cartTotal}
+        <div className="grid grid-cols-2 text-center">
+          <div>
+            Subtotal:
+            {
+              buttonLabel !== 'Subtotal' ?
+              <div>
+                <div>
+                  Shipping:
+                </div>
+                <div>
+                  Total:
+                </div>
+              </div> : ''
+            }
+          </div>
+          <div>
+            ${cartTotal}
+            {
+              buttonLabel !== 'Subtotal' ?
+              <div>
+                <div>
+                  $0
+                </div>
+                <div>
+                  ${cartTotal}
+                </div>
+              </div> : ''
+            }
+          </div>
+        </div>
+        {/* TODO: STRIPE CARD */}
         <Button
           type="button"
           onClick={checkout}

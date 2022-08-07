@@ -10,11 +10,7 @@ const Checkout = () => {
   return (
     <div>
       <div className="container mx-auto mt-10">
-        {
-          cartItems.length ?
-          <SubTotalCard title="Checkout" buttonLabel="Pay" /> :
-          ''
-        }
+        <SubTotalCard title="Checkout" buttonLabel="Pay" />
       </div>
       <div>
         { cartItems.length ?

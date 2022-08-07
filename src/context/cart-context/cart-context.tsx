@@ -40,14 +40,21 @@ export const CartProvider = ({ children }:Props) => {
   const [cartTotal, setCartTotal] = useState(0)
 
   const addItemToCart = (productToAdd:Item) => {
-    // console.log(productToAdd)
+    // TODO: SEND TO LOCAL STORAGE
     setCartItems(addCartItem(cartItems, productToAdd))
   }
 
   const removeItem = (productToRemove:Item) => {
+    // TODO: DELETE FROM LOCAL STORAGE
     setCartItems(removeCartItem(cartItems, productToRemove))
   }
 
+  const clearCart = () => {
+    setCartItems([])
+  }
+
+  // TODO: use effect to check local storage
+  
   // Items Counter
   useEffect(() => {
      const newItemsCount = cartItems.reduce((total, cartItem) =>
@@ -65,10 +72,11 @@ export const CartProvider = ({ children }:Props) => {
   // TODO: CONST VALUE THAT TROW TYPE ERROR value:USE INTERFACE here
   const value = {
     cartItems,
+    itemsCount,
+    cartTotal,
     addItemToCart,
     removeItem,
-    itemsCount,
-    cartTotal
+    clearCart,
   };
   return (
     <CartContext.Provider value={value}>{children}</CartContext.Provider>
