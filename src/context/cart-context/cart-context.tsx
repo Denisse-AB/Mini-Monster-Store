@@ -40,12 +40,10 @@ export const CartProvider = ({ children }:Props) => {
   const [cartTotal, setCartTotal] = useState(0)
 
   const addItemToCart = (productToAdd:Item) => {
-    // TODO: SEND TO LOCAL STORAGE
     setCartItems(addCartItem(cartItems, productToAdd))
   }
 
   const removeItem = (productToRemove:Item) => {
-    // TODO: DELETE FROM LOCAL STORAGE
     setCartItems(removeCartItem(cartItems, productToRemove))
   }
 
@@ -53,8 +51,6 @@ export const CartProvider = ({ children }:Props) => {
     setCartItems([])
   }
 
-  // TODO: use effect to check local storage
-  
   // Items Counter
   useEffect(() => {
      const newItemsCount = cartItems.reduce((total, cartItem) =>

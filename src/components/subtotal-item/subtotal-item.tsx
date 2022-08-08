@@ -10,15 +10,15 @@ const SubTotalItem = ({monster}:Monster) => {
   const removeItemFromCart = () => removeItem(monster);
 
   return (
-    <div className="flex flex-col m-3 w-48 mobile:mx-auto tablet:w-96 items-center bg-white rounded-lg border shadow-sm md:flex-row tablet:max-w-lg hover:bg-gray-100">
+    <div className="flex flex-col m-3 tablet:w-96 items-center bg-white rounded-lg border shadow-sm tablet:flex-row tablet:max-w-lg laptop:mx-20">
       <img className="object-cover w-full h-60 rounded-t-lg tablet:h-auto tablet:w-48 tablet:rounded-none tablet:rounded-l-lg" src={imageUrl} alt={`monster ${name}`} />
-      <div className="flex flex-col justify-between leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{name}</h5>
-        <p className="mb-3 font-normal text-gray-700">{`Price: ${price}`}</p>
-        <p>{`Qty: ${quantity}`}</p>
+      <div className="flex flex-col w-full justify-between leading-normal">
+        <h5 className="mb-2 mx-1 text-2xl font-bold text-gray-900 font-henny-penny tracking-wide mt-1">{name}</h5>
+        <p className="mb-3 mx-1 font-normal text-gray-700">{`Price: $${price}`}</p>
+        <p className="mx-1">{`Qty: ${quantity}`}</p>
         <Button
           type="button"
-          buttonType="ml-20 w-20 "
+          buttonType="mx-1 mb-2 w-20 "
           onClick={removeItemFromCart}
         >Delete
         </Button>

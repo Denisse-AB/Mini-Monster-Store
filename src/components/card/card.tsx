@@ -4,9 +4,8 @@ import monsters from '../../utils/product-data/product-data';
 const Card = () => {
   return (
     <div>
-      {/* <h1 className='text-center mt-16'>monsters</h1> */}
-      <div className='min-h-screen flex flex-col items-center justify-center'>
-        <div className="grid grid-cols-4 gap-4">
+      <div className='min-h-screen flex flex-col items-center justify-center cursor-pointer'>
+        <div className="grid grid-cols-2 gap-3 tablet:grid-cols-4 tablet:gap-4">
           {
             monsters.map((monster) => (
               <CardList key={monster.id} monster={monster} />

@@ -18,24 +18,19 @@ const CardList = ({ monster }:Monster) => {
 
   return (
     <div
-      // className='w-52 border border-black h-72'
-      // width: 35%; height: 8rem
-      // className='w-1/4 h-60 border border-black'
-      className='w-52 border border-black h-72'
-      onClick={insertItemToCart}>
+      className='mt-5 w-36 border-card-bg bg-card-bg rounded-sm shadow-sm h-72 tablet:hover:ease-out tablet:duration-150 tablet:hover:scale-105 tablet:mt-0 laptop:w-52 laptop:h-72'
+      onClick={insertItemToCart}
+    >
       <div
-        // className='w-60 bg-cover bg: width: fit-content; width: 35%;'
-        // instead of bg-cover use .bg-cover {background-size: cover;width: fit-content;}
         className='w-full h-full bg-cover bg-center'
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       >
-        {/* className="flex text-black text-right" */}
-        <div className="flex text-black">
-          <h2>{name}</h2>
-          <p>{price}</p>
-        </div>
+        <h2 className='text-white text-center text-xl font-henny-penny tracking-wide mt-1'>{name}</h2>
+      </div>
+      <div>
+        <p className='text-lg'>${price}</p>
       </div>
     </div>
   )

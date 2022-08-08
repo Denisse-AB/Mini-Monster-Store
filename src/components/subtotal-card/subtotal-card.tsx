@@ -21,7 +21,7 @@ const SubTotalCard = ({title, buttonLabel}:SubtotalProps) => {
   };
 
   return (
-    <div className="relative mx-3 w-96 tablet:float-right rounded-lg border shadow-sm hover:bg-gray-100">
+    <div className="relative mx-3 rounded-lg border shadow-sm tablet:w-80 tablet:float-right laptop:mx-20">
       <div className="m-5">
         <h5 className="mb-2 pb-3 border-b border-gray-300 text-center text-2xl font-bold tracking-tight text-gray-900">{title}</h5>
         <div className="grid grid-cols-2 text-center">
@@ -54,7 +54,6 @@ const SubTotalCard = ({title, buttonLabel}:SubtotalProps) => {
             }
           </div>
         </div>
-        {/* TODO: STRIPE CARD */}
         <Button
           type="button"
           onClick={checkout}
