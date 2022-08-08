@@ -12,7 +12,7 @@ const SubTotal = () => {
       <div className="container mx-auto mt-10">
         <SubTotalCard title="Subtotal" buttonLabel="Subtotal" />
       </div>
-      <div className={cartItems.length === 1 ? "" : "mobile:grid grid-cols-2 " + "tablet:grid-cols-none"}>
+      <div className={(cartItems.length === 1 ? "" : "mobile:grid grid-cols-2 ") + "tablet:grid-cols-none"}>
         { cartItems.length ?
           cartItems.map((monster: CartItem) => <SubTotalItem key={monster.id} monster={monster} />)
           : <span className='flex justify-center items-center text-3xl font-bold'>Your Cart Is Empty</span>

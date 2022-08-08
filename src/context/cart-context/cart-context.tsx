@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState, ReactNode } from "react";
-import { Item, CartItem } from "./cart-types";
+import { Item, CartItem, ContextInterface } from "./cart-types";
 
 const addCartItem = (cartItems:CartItem[], productToAdd:Item): CartItem[] => {
   const existingCartItem = cartItems.find((cartItem:Item) =>
@@ -25,11 +25,10 @@ interface Props {
   children?: ReactNode
 }
 
-// TODO: CHECK ANY TYPE https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context/
-export const CartContext:any = createContext({
+export const CartContext = createContext<ContextInterface | any>({
   cartItems: [],
-  addItemToCart: ():void => {},
-  removeItem: ():void => {},
+  addItemToCart: () => {},
+  removeItem: () => {},
   itemsCount: 0,
   cartTotal: 0
 });
@@ -65,7 +64,6 @@ export const CartProvider = ({ children }:Props) => {
       setCartTotal(newCartTotal)
   }, [cartItems])
 
-  // TODO: CONST VALUE THAT TROW TYPE ERROR value:USE INTERFACE here
   const value = {
     cartItems,
     itemsCount,

@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         'card-bg': '#008b8b',
+        'price-bg': '#8b33006e',
         'button-hv': '#16b1b1'
       },
       fontFamily: {

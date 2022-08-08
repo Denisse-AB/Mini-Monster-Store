@@ -11,6 +11,7 @@ const ThankYou = () => {
       navigate('/')
     }
     clearCart()
+    // eslint-disable-next-line
   }, [])
 
   return (

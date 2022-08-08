@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import Card from '../components/card/card';
+import HomeCard from '../components/home-card/home-card';
 
 const Home = () => {
   return (
     <div>
-      <Card />
+      <HomeCard />
       <Outlet />
     </div>
   )

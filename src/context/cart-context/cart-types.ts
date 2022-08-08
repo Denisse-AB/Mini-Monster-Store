@@ -9,10 +9,10 @@ export type CartItem = {
   quantity: number
 } & Item;
 
-// TODO: CHECK
-// export type CartState = {
-//   readonly cartItems: CartItem[],
-//   readonly addItemToCart: void,
-//   readonly removeItem: void,
-//   readonly cartTotal: number
-// }
+export type ContextInterface = {
+  cartItems: CartItem[],
+  addItemToCart: () => {},
+  removeItem: () => {},
+  itemsCount: number,
+  cartTotal: number
+}

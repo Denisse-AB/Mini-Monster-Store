@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/cart-context/cart-context";
-import { Monster } from "../card-list/card-list";
+import { Monster } from "../home-card-list/home-card-list";
 import Button from "../button/button";
 
 const SubTotalItem = ({monster}:Monster) => {

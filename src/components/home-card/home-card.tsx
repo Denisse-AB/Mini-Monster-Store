@@ -1,14 +1,14 @@
-import CardList from '../../components/card-list/card-list';
+import HomeCardList from '../home-card-list/home-card-list';
 import monsters from '../../utils/product-data/product-data';
 
-const Card = () => {
+const HomeCard = () => {
   return (
     <div>
       <div className='min-h-screen flex flex-col items-center justify-center cursor-pointer'>
         <div className="grid grid-cols-2 gap-3 tablet:grid-cols-4 tablet:gap-4">
           {
             monsters.map((monster) => (
-              <CardList key={monster.id} monster={monster} />
+              <HomeCardList key={monster.id} monster={monster} />
             ))
           }
         </div>
@@ -16,4 +16,4 @@ const Card = () => {
     </div>
   )
 }
-export default Card;
+export default HomeCard;
