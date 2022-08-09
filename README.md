@@ -8,6 +8,14 @@
 
 [React Mini Monster Store](https://denisse-ab.github.io/mini-monster-pages/)
 
+---
+
+<p align="center">
+  <img src="public\monster-pages.png" width="450" alt="screenshot">
+</p>
+
+---
+
 ## Setup
 
 - [Fork if you want a copy of this project](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
