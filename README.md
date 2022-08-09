@@ -4,6 +4,10 @@
 
 - React TypeScript Mini Monster Store.
 
+## Demo
+
+[React Mini Monster Store](https://denisse-ab.github.io/mini-monster-pages/)
+
 ## Setup
 
 - [Fork if you want a copy of this project](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
