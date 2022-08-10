@@ -11,7 +11,6 @@ const Checkout = () => {
     <div>
       <div className="container mx-auto mt-10">
         <CheckoutCard />
-        {/* <SubTotalCard title="Checkout" buttonLabel="Pay" /> */}
       </div>
       <div className={(cartItems.length === 1 ? "" : "mobile:grid grid-cols-2 ") + "tablet:grid-cols-none"}>
         { cartItems.length ?
