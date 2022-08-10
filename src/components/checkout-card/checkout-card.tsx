@@ -42,7 +42,7 @@ const CheckoutCard = () => {
         <Button
           type="button"
           onClick={checkout}
-          buttonType='w-full'
+          buttonClass='w-full'
         >Pay
         </Button>
       </div>

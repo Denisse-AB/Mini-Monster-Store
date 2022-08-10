@@ -26,7 +26,7 @@ const SubTotalCard = () => {
         <Button
           type="button"
           onClick={checkout}
-          buttonType='w-full'
+          buttonClass='w-full'
         >Checkout
         </Button>
       </div>

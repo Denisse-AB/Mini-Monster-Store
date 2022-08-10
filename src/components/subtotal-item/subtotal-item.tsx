@@ -18,7 +18,7 @@ const SubTotalItem = ({monster}:Monster) => {
         <p className="mx-1">{`Qty: ${quantity}`}</p>
         <Button
           type="button"
-          buttonType="mx-1 mb-2 w-20 "
+          buttonClass="mx-1 mb-2 w-20 "
           onClick={removeItemFromCart}
         >Delete
         </Button>
