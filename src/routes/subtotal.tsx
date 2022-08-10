@@ -10,7 +10,7 @@ const SubTotal = () => {
   return (
     <div>
       <div className="container mx-auto mt-10">
-        <SubTotalCard title="Subtotal" buttonLabel="Subtotal" />
+        <SubTotalCard />
       </div>
       <div className={(cartItems.length === 1 ? "" : "mobile:grid grid-cols-2 ") + "tablet:grid-cols-none"}>
         { cartItems.length ?

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../context/cart-context/cart-context";
 import { CartItem } from "../context/cart-context/cart-types";
-import SubTotalCard from "../components/subtotal-card/subtotal-card";
 import SubTotalItem from "../components/subtotal-item/subtotal-item";
+import CheckoutCard from "../components/checkout-card/checkout-card";
 
 const Checkout = () => {
   const { cartItems } = useContext(CartContext);
@@ -10,7 +10,8 @@ const Checkout = () => {
   return (
     <div>
       <div className="container mx-auto mt-10">
-        <SubTotalCard title="Checkout" buttonLabel="Pay" />
+        <CheckoutCard />
+        {/* <SubTotalCard title="Checkout" buttonLabel="Pay" /> */}
       </div>
       <div className={(cartItems.length === 1 ? "" : "mobile:grid grid-cols-2 ") + "tablet:grid-cols-none"}>
         { cartItems.length ?
