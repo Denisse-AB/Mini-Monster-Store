@@ -40,6 +40,7 @@ const CheckoutCard = () => {
           </div>
         </div>
         <Button
+          isLoading={false}
           type="button"
           onClick={checkout}
           buttonClass='w-full'

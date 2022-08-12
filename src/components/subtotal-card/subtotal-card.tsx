@@ -24,10 +24,11 @@ const SubTotalCard = () => {
           </div>
         </div>
         <Button
+          isLoading={false}
           type="button"
           onClick={checkout}
           buttonClass='w-full'
-        >Checkout
+        >Subtotal
         </Button>
       </div>
     </div>
