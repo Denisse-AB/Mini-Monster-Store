@@ -4,9 +4,13 @@
 
 - React TypeScript Mini Monster Store.
 
+## Stripe
+
+[Connect Stripe to the Monster Store](https://codingpr.com/stripe-and-react-typescript/)
+
 ## Demo
 
-[React Mini Monster Store](https://denisse-ab.github.io/mini-monster-pages/)
+[React Mini Monster Store Demo](https://denisse-ab.github.io/mini-monster-pages/)
 
 ---
 
