@@ -3,8 +3,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/cart-context/cart-context';
 import monsters from './utils/product-data/product-data';
 import Navigation from '../src/routes/navigation';
+import HomeCard from '../src/components/home-card/home-card';
 import HomeCardList from '../src/components/home-card-list/home-card-list';
 import Checkout from './routes/checkout';
+
+function fireOnClickEvent (testId:HTMLElement, text:string ) {
+  fireEvent(
+    getByText(testId, text),
+    new MouseEvent('click', {
+      bubbles: true,
+      cancelable: true,
+    }),
+  )
+}
 
 it('is searching the monster object', () => {
   expect(monsters[3].id).toBe(4);
@@ -30,13 +41,7 @@ describe('the cart', () => {
     )
     const div =  screen.getByTestId('test-insert-item');
 
-    fireEvent(
-      getByText(div, 'Titanic Arms'),
-      new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-      }),
-    )
+    fireOnClickEvent(div, 'Titanic Arms');
 
     const cartTotal = screen.getByTestId('test-total').textContent;
     expect(cartTotal).toBe('$25');
@@ -47,5 +52,26 @@ describe('the cart', () => {
     const checkoutItem = screen.getByTestId('test-checkout-route').textContent;
     expect(checkoutItem).toContain('Titanic Arms');
   });
-  // TODO: INSERT 2 ITEMS IN CART
+
+  test('insert 2 monsters in cart', () => {
+    render (
+      <BrowserRouter>
+        <CartProvider>
+          <HomeCard />
+          <Navigation />
+          <Checkout />
+        </CartProvider>
+      </BrowserRouter>
+    )
+    const div =  screen.getByTestId('test-insert-2-items');
+
+    fireOnClickEvent(div, 'Titanic Arms');
+    fireOnClickEvent(div, 'Dragon Monster');
+
+    const cartTotal = screen.getByTestId('test-total').textContent;
+    expect(cartTotal).toBe('$55');
+
+    const navigationCartCount = screen.getByTestId('test-cart-count')?.textContent;
+    expect(navigationCartCount).toBe('2');
+  })
 });
