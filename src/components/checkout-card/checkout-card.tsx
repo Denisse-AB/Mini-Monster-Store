@@ -33,7 +33,7 @@ const CheckoutCard = () => {
               <div>
                 $0
               </div>
-              <div>
+              <div data-testid="test-total">
                 ${cartTotal}
               </div>
             </div>

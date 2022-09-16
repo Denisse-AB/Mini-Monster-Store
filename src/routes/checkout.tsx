@@ -8,7 +8,7 @@ const Checkout = () => {
   const { cartItems } = useContext(CartContext);
 
   return (
-    <div>
+    <div data-testid="test-checkout-route">
       <div className="container mx-auto mt-10">
         <CheckoutCard />
       </div>

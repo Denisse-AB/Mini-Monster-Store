@@ -23,6 +23,7 @@ const HomeCardList = ({ monster }:Monster) => {
       tablet:duration-150 tablet:hover:scale-105 tablet:mt-0
       laptop:w-52 laptop:h-72'
       onClick={insertItemToCart}
+      data-testid="test-insert-item"
     >
       <div
         className='w-full h-full bg-cover bg-center'
