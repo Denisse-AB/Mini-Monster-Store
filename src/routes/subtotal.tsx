@@ -8,7 +8,7 @@ const SubTotal = () => {
   const { cartItems } = useContext(CartContext);
 
   return (
-    <div>
+    <div data-testid="test-subtotal-route">
       <div className="container mx-auto mt-10">
         <SubTotalCard />
       </div>

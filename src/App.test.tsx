@@ -6,6 +6,7 @@ import Navigation from '../src/routes/navigation';
 import HomeCard from '../src/components/home-card/home-card';
 import HomeCardList from '../src/components/home-card-list/home-card-list';
 import Checkout from './routes/checkout';
+import SubTotal from './routes/subtotal';
 
 function fireOnClickEvent (testId:HTMLElement, text:string ) {
   fireEvent(
@@ -29,7 +30,7 @@ it('is searching the monster object', () => {
 });
 
 describe('the cart', () => {
-  test('insert monster 1 in cart when clicked', () => {
+  test('insert monster 1 in cart', () => {
     render(
       <BrowserRouter>
         <CartProvider>
@@ -74,4 +75,28 @@ describe('the cart', () => {
     const navigationCartCount = screen.getByTestId('test-cart-count')?.textContent;
     expect(navigationCartCount).toBe('2');
   })
+});
+
+describe('the routes', () => {
+  test('the subtotal route with no items in cart', () => {
+    render(
+      <BrowserRouter>
+        <SubTotal />
+      </BrowserRouter>
+    )
+
+    const subtotalRoute = screen.getByTestId('test-subtotal-route')?.textContent;
+    expect(subtotalRoute).toContain('Your Cart Is Empty');
+  });
+
+  test('the checkout route with no items in cart', () => {
+    render(
+      <BrowserRouter>
+        <Checkout />
+      </BrowserRouter>
+    )
+
+    const subtotalRoute = screen.getByTestId('test-checkout-route')?.textContent;
+    expect(subtotalRoute).toContain('Your Cart Is Empty');
+  });
 });
