@@ -1,4 +1,4 @@
-import { fireEvent, getByText, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { CartProvider } from './context/cart-context/cart-context';
 import monsters from './utils/product-data/product-data';
@@ -8,9 +8,9 @@ import HomeCardList from '../src/components/home-card-list/home-card-list';
 import Checkout from './routes/checkout';
 import SubTotal from './routes/subtotal';
 
-function fireOnClickEvent (testId:HTMLElement, text:string ) {
+function fireOnClickEvent (text:string) {
   fireEvent(
-    getByText(testId, text),
+    screen.getByText(text),
     new MouseEvent('click', {
       bubbles: true,
       cancelable: true,
@@ -40,9 +40,9 @@ describe('the cart', () => {
         </CartProvider>
       </BrowserRouter>
     )
-    const div =  screen.getByTestId('test-insert-item');
+    screen.getByTestId('test-insert-item');
 
-    fireOnClickEvent(div, 'Titanic Arms');
+    fireOnClickEvent('Titanic Arms');
 
     const cartTotal = screen.getByTestId('test-total').textContent;
     expect(cartTotal).toBe('$25');
@@ -64,10 +64,10 @@ describe('the cart', () => {
         </CartProvider>
       </BrowserRouter>
     )
-    const div =  screen.getByTestId('test-insert-2-items');
+    screen.getByTestId('test-insert-2-items');
 
-    fireOnClickEvent(div, 'Titanic Arms');
-    fireOnClickEvent(div, 'Dragon Monster');
+    fireOnClickEvent('Titanic Arms');
+    fireOnClickEvent('Dragon Monster');
 
     const cartTotal = screen.getByTestId('test-total').textContent;
     expect(cartTotal).toBe('$55');
