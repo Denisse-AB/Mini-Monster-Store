@@ -1,3 +1,4 @@
+// Array of monster by https://robohash.org/
 const monsters = [
   {
     id: 1,
